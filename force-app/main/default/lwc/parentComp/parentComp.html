@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Parent"></lightning-card>
+    
+    <div style="background-color:white ;">
+    <c-child-Comp child-name={parentVal} onbuttonclick={handleonParent}></c-child-Comp>
+
+        <lightning-input type="text" value="0" label="Enter text to reflect on child component" class="dt" onchange={handlepress}></lightning-input>
+        <br>
+        <p>{pVal}</p>
+
+    </div>
+     
+    
+    
+ </template>

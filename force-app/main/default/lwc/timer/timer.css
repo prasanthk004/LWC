@@ -1,0 +1,39 @@
+.test
+{
+    background-color: white;
+    font-size:30px;
+    color:#2f3640;
+    
+}
+
+.test1
+{
+    background-color: white;
+    font-size:25px;
+    color:#487eb0;
+    
+}
+
+.main
+{
+    background-color: white;
+     color:#487eb0;
+    
+}
+.dis
+{
+    background-color:white ;
+    font-size:16px;
+    font-family: calibri;
+    color: darkgreen;
+    border:1px solid  darkgreen ;
+    width: 150px;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 50px;
+  
+     
+ 
+}

@@ -1,0 +1,21 @@
+<template >
+    <lightning-card title="Timer" icon-name="utility:clock" onload={test}></lightning-card>
+    <div class="main">
+        <h1  class="test slds-text-align_center">Timer</h1>
+        <div class="slds-text-align_center test1">{clock}</div>
+        <br>
+        <lightning-button variant="success" label="LAP" title="Records the time" onclick={handleClick} class="slds-m-left_x-small slds-align_absolute-center"></lightning-button>
+        <lightning-button variant="destructive-text" label="Clear" title="Clears the time" onclick={handleClick} class="slds-m-left_x-small slds-align_absolute-center"></lightning-button>
+        
+
+        <br>        
+        <template for:each={times} for:item="time"  >
+            
+            
+            <div key={time} class="slds-text-align_center dis">{time}</div>
+            <br key={time}>
+        </template>
+    </div>
+
+    
+</template> 
