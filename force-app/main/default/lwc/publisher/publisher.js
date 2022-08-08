@@ -11,11 +11,13 @@ export default class Publisher extends LightningElement {
  
    
      fireEvent(this.pageRef,"passInput",event.target.value)
+     
    }
 
    handleClick()
    {
-    x=this.template.querySelector('.tx').value;
-    alert(x);
+    
+    fireEvent(this.pageRef,"sendText",this.template.querySelector(".dt").value);
+    this.template.querySelector(".dt").value=""
    }
 }

@@ -1,5 +1,12 @@
 <template>
     <lightning-card title="Subscriber" icon-name="standard:buyer_group">
-        <lightning-badge label={inmessage}></lightning-badge>
-    </lightning-card>
+        <lightning-badge label={inmessage}></lightning-badge></lightning-card>
+ 
+<div class="slds-card">
+ <template for:each={msgArr} for:item="mesg">
+    <div key={mesg}>{mesg}   
+    </div> 
+ </template> 
+</div>
+
 </template>

@@ -8,14 +8,22 @@ export default class Subscriber extends LightningElement {
 
     @track inmessage="test Text"
     @wire(CurrentPageReference) pageRef;
+    @track msgArr=[];
 
     connectedCallback()
     {
         
         registerListener("passInput",this.showInput,this);
+        registerListener("sendText",this.displayMessage,this);
     }
 
+    displayMessage(msg)
+    {
+     
+        this.msgArr.push(msg);
 
+
+    }
     showInput(values)
     {
        
