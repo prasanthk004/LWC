@@ -1,3 +1,21 @@
-import { LightningElement } from 'lwc';
+import { LightningElement,track,wire } from 'lwc';
+  import{CurrentPageReference} from 'lightning/navigation'
+ 
+  import { fireEvent } from 'c/pubsub';
+export default class Publisher extends LightningElement {
 
-export default class Publisher extends LightningElement {}
+   @wire(CurrentPageReference) pageRef;
+   @track x='';
+   handlechange(event)
+   {
+ 
+   
+     fireEvent(this.pageRef,"passInput",event.target.value)
+   }
+
+   handleClick()
+   {
+    x=this.template.querySelector('.tx').value;
+    alert(x);
+   }
+}
