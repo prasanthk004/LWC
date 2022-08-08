@@ -24,7 +24,7 @@ import { LightningElement ,wire,track} from 'lwc';
          x[i].checked=event.detail;
          }        
         
-    
+     
 
        
     
