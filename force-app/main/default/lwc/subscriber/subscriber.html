@@ -1,12 +1,26 @@
 <template>
     <lightning-card title="Subscriber" icon-name="standard:buyer_group">
-        <lightning-badge label={inmessage}></lightning-badge></lightning-card>
- 
-<div class="slds-card">
- <template for:each={msgArr} for:item="mesg">
-    <div key={mesg} class="my-text">{mesg}   
-    </div> 
- </template> 
-</div>
+        
+        <lightning-badge label={inmessage}></lightning-badge>       
+           
+            
+            <lightning-input type="text" label="Enter Message" placeholder="type here.."  class="dt"  > </lightning-input>
+            <lightning-button variant="brand" label="Send" title="Send messages" onclick={handleClick} class="slds-m-left_x-small"  slot="actions"  accesskey="c"  ></lightning-button>
+
+        </lightning-card>
+
+            
+        <div class="slds-card" style="height: 400px;">
+     
+            <template for:each={msgArr} for:item="mesg">
+                
+               <div key={mesg} class="my-text">{mesg}   
+               </div> 
+            
+               
+            </template> 
+
+        </div>
+
 
 </template>

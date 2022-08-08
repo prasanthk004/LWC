@@ -9,18 +9,31 @@ export default class Subscriber extends LightningElement {
     @track inmessage="test Text"
     @wire(CurrentPageReference) pageRef;
     @track msgArr=[];
+    @track myMsgArr=[];
+    @track dmsg;
 
     connectedCallback()
     {
         
         registerListener("passInput",this.showInput,this);
         registerListener("sendText",this.displayMessage,this);
+
     }
 
     displayMessage(msg)
     {
-     
-        this.msgArr.push(msg);
+      
+        if(msg!="")
+        {
+            this.msgArr.push(msg);
+            this.dmsg=true;
+        }
+            
+
+
+         
+
+        this.inmessage="";
 
 
     }
@@ -37,4 +50,10 @@ export default class Subscriber extends LightningElement {
         //unregisterListener("passInput",this.showInput,this);
     }
     
+    handleClick()
+    {
+         this.msgArr.push(this.template.querySelector(".dt").value);
+         this.dmsg=false;
+         
+    }
 }

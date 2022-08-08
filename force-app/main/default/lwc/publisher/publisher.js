@@ -9,8 +9,11 @@ export default class Publisher extends LightningElement {
    handlechange(event)
    {
  
-   
-     fireEvent(this.pageRef,"passInput",event.target.value)
+ 
+ 
+      fireEvent(this.pageRef,"passInput","typing...")
+
+    
      
    }
 
@@ -19,5 +22,6 @@ export default class Publisher extends LightningElement {
     
     fireEvent(this.pageRef,"sendText",this.template.querySelector(".dt").value);
     this.template.querySelector(".dt").value=""
+    
    }
 }

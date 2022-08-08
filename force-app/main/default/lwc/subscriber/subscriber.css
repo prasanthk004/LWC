@@ -14,3 +14,21 @@
     padding: 0.5rem 1rem;
     margin: 0.12rem 0.5rem;
    }
+
+
+   .my-msg {
+    background: linear-gradient(
+    180deg,
+    rgb(111, 122, 15) 0%,
+    rgb(207, 150, 44) 51%,
+    rgb(216, 64, 26) 92%
+    )
+    no-repeat center;
+    background-attachment: fixed;
+    color: #fff;
+    border-radius: 0.5rem;
+    height: fit-content;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    margin: 0.12rem 0.5rem;
+   }

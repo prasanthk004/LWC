@@ -1,7 +1,8 @@
 <template>
     <lightning-card title="Publisher" icon-name="standard:announcement">
+    
     <lightning-input type="text" label="Enter Message" placeholder="type here.."  class="dt" onchange={handlechange}></lightning-input>
-    <lightning-button variant="brand" label="Send" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"  slot="actions"></lightning-button>
+    <lightning-button variant="brand" label="Send" title="Send messages" onclick={handleClick} class="slds-m-left_x-small"  slot="actions"  accesskey="c" aria-errormessage=""></lightning-button>
 
 </lightning-card>
 </template>
