@@ -3,10 +3,11 @@ import{CurrentPageReference} from 'lightning/navigation'
  
  import { registerListener } from 'c/pubsub';
  import { unregisterListener } from 'c/pubsub';
+import { fireEvent } from 'c/pubsub';
 
 export default class Subscriber extends LightningElement {
 
-    @track inmessage="test Text"
+    @track inmessage="Status"
     @wire(CurrentPageReference) pageRef;
     @track msgArr=[];
     @track myMsgArr=[];
@@ -49,11 +50,21 @@ export default class Subscriber extends LightningElement {
         console.log("Calling disconnectedCallback")
         //unregisterListener("passInput",this.showInput,this);
     }
-    
-    handleClick()
+    handleClick(event)
     {
-         this.msgArr.push(this.template.querySelector(".dt").value);
-         this.dmsg=false;
-         
+        if(event.target.label=="Send"){
+            fireEvent(this.pageRef,"passMsg",this.template.querySelector(".dt").value);
+            this.template.querySelector(".dt").value="";
+        }
+        else{
+            this.msgArr=[]
+        }
+    
+    }
+
+
+    handlchange()
+    {
+        fireEvent(this.pageRef,"ShowStatus","typing..")
     }
 }
