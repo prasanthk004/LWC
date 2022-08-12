@@ -7,7 +7,18 @@ export default class DispalyCreatedAccount extends LightningElement {
 
     @track accountList;
 
-  //  @wire(getAccountObj) wiredAccountData ;
+     @wire(getAccountObj) wiredAccountData({data,error})
+     {
+         if(data)
+         {
+             this.accountList=data;
+            console.log(data);
+         }
+         else if(error)
+         {
+             console.log(error);
+         }
+    }
 
     connectedCallback()
     {
