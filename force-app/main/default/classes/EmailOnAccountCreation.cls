@@ -1,12 +1,9 @@
 public with sharing class EmailOnAccountCreation {
-    public EmailOnAccountCreation() {
+    
+ 
 
-    }
-
-    public NewGeneratedAccounts n;
-
-    @future (callout=true)
-    public static void  SendMail()
+  
+    public static NewGeneratedAccounts  sendMail()
     {
 		
        Http httpProtocol = new Http();
@@ -31,10 +28,10 @@ public with sharing class EmailOnAccountCreation {
 /*string str='{"new_T":[{"attributes":{"type":"Account"},"IsDeleted":false,"CleanStatus":"Pending","OwnerId":"0055i000001tHeIAAU","Name":"TechnoPark ITC","AccountNumber":"6545646541"}],"old":[],"userId":"0055i000001tHeIAAU"}';*/
 system.debug(str);
 
-  n=(NewGeneratedAccounts) JSON.deserialize(str,NewGeneratedAccounts.class);
+NewGeneratedAccounts n=(NewGeneratedAccounts) JSON.deserialize(str,NewGeneratedAccounts.class);
 system.debug(n.new_T[0].AccountNumber);
 
-User UserName=[select Id,Name from User where Id=:n.userId];
+User userName=[select Id,Name from User where Id=:n.userId];
     
 System.debug(UserName.Name);
 
@@ -43,15 +40,17 @@ String body='Account Number : '+n.new_T[0].AccountNumber+'\n'+'Account Name : '+
 
 EmailMissionSpecialist ex=new EmailMissionSpecialist();
 
-ex.sendMail('prasanthkishore004@gmail.com',sub,body);
+//ex.sendMail('prasanthkishore004@gmail.com',sub,body);
 
-     
+     return n ;
 }
 @AuraEnabled(cacheable=true)
-public NewGeneratedAccounts getDetails()
+public static NewGeneratedAccounts getAccountObj()
 {
-    SendMail();
-    return n ;
+
+ NewGeneratedAccounts x= SendMail();
+   
+    return x ;
 
 }
 

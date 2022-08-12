@@ -1,14 +1,23 @@
 import { LightningElement,wire,track} from 'lwc';
-import getDetails from  '@salesforce/apex/getDetails.EmailOnAccountCreation';
+import getAccountDataLimit from '@salesforce/apex/AccountInfo.getAccountDataLimit';
+ import getAccountObj from '@salesforce/apex/EmailOnAccountCreation.getAccountObj';
 
 export default class DispalyCreatedAccount extends LightningElement {
 
 
     @track accountList;
 
-    @wire(getAccountData) wiredAccountData ;
+  //  @wire(getAccountObj) wiredAccountData ;
 
-    
+    connectedCallback()
+    {
+        //console.log(wiredAccountData);
+        //.log(wiredAccountData.data);
+
+
+    }
+ 
+
 
 
 }
