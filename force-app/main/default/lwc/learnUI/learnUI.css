@@ -6,23 +6,20 @@ li a
     text-decoration: none;
     
     margin-left: 20px;
-    color: black ;
-    font-size: medium;
+    color: white ;
+    font-size: 17px;
    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     
     
 }
-.lih
-{
-    margin-left: 400px;
-}
+ 
 
 .ldiv
 {
-    border:20px;
-    border-color:red;
+     
+    border-bottom: solid 8px yellow;
     display: inline-block;
-    background-color: skyblue;
+    background-color: #5f27cd;
     width:1559px;
     
 
